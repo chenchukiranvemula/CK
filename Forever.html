@@ -1,0 +1,36 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Forever ❤️</title>
+<style>
+body{margin:0;font-family:Georgia,serif;background:linear-gradient(180deg,#120018,#3d0b3d);color:#fff;overflow:hidden;display:flex;align-items:center;justify-content:center;height:100vh}
+#bg span{position:absolute;color:#ff8fb1;animation:f 8s linear infinite}
+@keyframes f{from{transform:translateY(110vh)}to{transform:translateY(-20vh)}}
+.card{width:92%;max-width:700px;background:rgba(255,255,255,.08);backdrop-filter:blur(10px);padding:24px;border-radius:22px;text-align:center;box-shadow:0 0 30px #0008}
+#env{cursor:pointer;padding:18px;border:2px solid #fff;border-radius:16px;display:inline-block}
+#letter{display:none;text-align:left;white-space:pre-wrap;line-height:1.7;margin-top:18px}
+h1{animation:pulse 2s infinite}@keyframes pulse{50%{transform:scale(1.04)}}
+</style></head><body><div id="bg"></div><div class="card"><h1>❤️ I Love You ❤️</h1><div id="env" onclick="openLetter()">💌 Click to Open My Heart</div><div id="letter"></div></div>
+<audio autoplay loop><source src="music.mp3"></audio>
+<script>
+for(let i=0;i<50;i++){let s=document.createElement('span');s.innerHTML='❤';s.style.left=Math.random()*100+'vw';s.style.fontSize=(10+Math.random()*25)+'px';s.style.animationDuration=(4+Math.random()*6)+'s';document.getElementById('bg').appendChild(s);}
+const text=`My Love,
+
+If I could pause time, I would choose every moment where you smiled.
+
+You have become a part of my heart in a way words can never fully explain. Your happiness makes my world brighter, and your tears would always matter to me.
+
+No matter how many days pass, my feelings for you only grow stronger. You are the reason ordinary moments become beautiful memories.
+
+Whenever life becomes difficult, I hope you remember that there is someone who believes in you, cares for you deeply, and silently thanks the universe every day for bringing you into my life.
+
+I don't promise a perfect journey, but I promise that my love, respect, and care for you will always be genuine.
+
+If one sentence could describe everything in my heart, it would simply be...
+
+I LOVE YOU.
+
+Today.
+Tomorrow.
+Forever.
+
+❤️ Yours, Always ❤️`;
+function openLetter(){env.style.display='none';letter.style.display='block';let i=0;let t=setInterval(()=>{letter.textContent+=text[i++]||'';if(i>text.length)clearInterval(t);},28);}
+</script></body></html>

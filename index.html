@@ -16,18 +16,10 @@
             justify-content: center;
             height: 100vh;
         }
-        #bg span {
-            position: absolute;
-            color: #ff8fb1;
-            animation: f 8s linear infinite;
-        }
-        @keyframes f {
-            from { transform: translateY(110vh); }
-            to { transform: translateY(-20vh); }
-        }
+        #bg span { position: absolute; color: #ff8fb1; animation: f 8s linear infinite; }
+        @keyframes f { from { transform: translateY(110vh); } to { transform: translateY(-20vh); } }
         .card {
-            width: 92%;
-            max-width: 700px;
+            width: 92%; max-width: 700px;
             background: rgba(255,255,255,0.08);
             backdrop-filter: blur(10px);
             padding: 24px;
@@ -36,48 +28,19 @@
             box-shadow: 0 0 30px #0008;
         }
         #env {
-            cursor: pointer;
-            padding: 18px;
-            border: 2px solid #fff;
-            border-radius: 16px;
-            display: inline-block;
-            transition: .3s;
+            cursor: pointer; padding: 18px; border: 2px solid #fff;
+            border-radius: 16px; display: inline-block; transition: .3s;
         }
-        #env:hover {
-            transform: scale(1.08);
-            box-shadow: 0 0 20px #ff5ea8;
-        }
+        #env:hover { transform: scale(1.08); box-shadow: 0 0 20px #ff5ea8; }
         #letter {
-            display: none;
-            opacity: 0;
-            animation: fadeIn 1.5s forwards;
-            text-align: left;
-            white-space: pre-wrap;
-            line-height: 1.7;
-            margin-top: 18px;
+            display: none; opacity: 0; animation: fadeIn 1.5s forwards;
+            text-align: left; white-space: pre-wrap; line-height: 1.7; margin-top: 18px;
         }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        h1 {
-            animation: pulse 2s infinite;
-        }
-        @keyframes pulse {
-            50% { transform: scale(1.04); }
-        }
-        .star {
-            position: absolute;
-            width: 3px;
-            height: 3px;
-            background: white;
-            border-radius: 50%;
-            animation: twinkle 2s infinite alternate;
-        }
-        @keyframes twinkle {
-            from { opacity: 0.2; transform: scale(0.8); }
-            to { opacity: 1; transform: scale(1.8); }
-        }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        h1 { animation: pulse 2s infinite; }
+        @keyframes pulse { 50% { transform: scale(1.04); } }
+        .star { position: absolute; width: 3px; height: 3px; background: white; border-radius: 50%; animation: twinkle 2s infinite alternate; }
+        @keyframes twinkle { from { opacity: 0.2; transform: scale(0.8); } to { opacity: 1; transform: scale(1.8); } }
     </style>
 </head>
 <body>
@@ -88,8 +51,10 @@
         <div id="letter"></div>
     </div>
 
-    <!-- Optional: Add your music.mp3 later or remove the audio tag -->
-    <!-- <audio autoplay loop><source src="music.mp3"></audio> -->
+    <!-- Romantic Background Music -->
+    <audio id="bgMusic" autoplay loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    </audio>
 
     <script>
         // Floating hearts
@@ -144,6 +109,10 @@ Forever.
             star.style.animationDelay = Math.random() * 2 + "s";
             document.body.appendChild(star);
         }
+
+        // Music control (in case autoplay is blocked)
+        const music = document.getElementById('bgMusic');
+        music.volume = 0.4; // Gentle volume
     </script>
 </body>
 </html>
